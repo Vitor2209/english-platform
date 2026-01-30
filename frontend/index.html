@@ -1,80 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - Inglês das Ruas</title>
-    <meta name="description" content="Aprenda inglês de verdade com o Inglês das Ruas - Quiz interativo">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Inglês das Ruas</title>
+  <meta name="description" content="Aprenda inglês de verdade com o Inglês das Ruas - Quiz interativo">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Main Quiz Container -->
-    <div class="quiz-container">
-        <div class="quiz-card" id="quiz-card">
 
-            <!-- Card Header with Logo -->
-            <header class="logo-wrapper">
-                <img src="image/logo.png" alt="Inglês das Ruas" class="logo">
-            </header>
+  <div class="quiz-container">
+    <div class="quiz-card" id="quiz-card">
 
-            <div class="quiz-container">
-                <!-- quiz -->
-            </div>
+      <!-- LOGO FIXA -->
+      <header class="logo-wrapper">
+        <img src="image/logo.png" alt="Inglês das Ruas" class="logo">
+      </header>
 
+      <!-- ================= HOME SCREEN ================= -->
+      <div id="home-screen" class="card-body">
 
-            <!-- Card Body -->
-            <div class="card-body">
+        <h2 class="question">O que você quer praticar hoje?</h2>
 
-                <!-- Loading State -->
-                <div id="loading-state" class="loading">
-                    <div class="loading-spinner"></div>
-                    <p class="loading-text">Carregando perguntas...</p>
-                </div>
+        <div class="options-list">
+          <button class="option-btn home-btn" data-action="module-1">
+            Aula 1 – A base que você precisa
+          </button>
 
-                <!-- Error State -->
-                <div id="error-state" class="error-message hidden">
-                    <h3>😕 Oops!</h3>
-                    <p>Não foi possível carregar as perguntas.</p>
-                    <button class="retry-btn" id="retry-btn">Tentar novamente</button>
-                </div>
+          <button class="option-btn home-btn" data-action="module-2">
+            Aula 2 – Construindo Frases Simples
+          </button>
 
-                <!-- Quiz Content -->
-                <div id="quiz-content" class="hidden">
-                    <!-- Progress Indicator -->
-                    <div class="progress-indicator">
-                        <span id="progress-text">Pergunta 1 de 5</span>
-                    </div>
-
-                    <!-- Question -->
-                    <h2 class="question" id="question-text">Loading question...</h2>
-
-                    <!-- Feedback Message -->
-                    <div id="feedback-message" class="feedback hidden"></div>
-
-                    <!-- Options -->
-                    <div class="options-list" id="options-container">
-                        <!-- Options will be rendered here by JavaScript -->
-                    </div>
-
-                    <!-- Next Button -->
-                    <button class="next-btn" id="next-btn" disabled>Next</button>
-                </div>
-
-                <!-- Quiz Complete State -->
-                <div id="complete-state" class="quiz-complete hidden">
-                    <h2>🎉 Quiz Completo!</h2>
-                    <div class="score" id="final-score">0/5</div>
-                    <p id="score-message">Parabéns pelo seu desempenho!</p>
-                    <button class="restart-btn" id="restart-btn">Jogar Novamente</button>
-                </div>
-
-            </div>
+          <button class="option-btn random-quiz">
+            🎲 Quiz Aleatório
+          </button>
         </div>
+
+      </div>
+      <!-- =============== FIM HOME SCREEN =============== -->
+
+
+      <!-- ================= QUIZ SCREEN ================= -->
+      <div id="quiz-screen" class="card-body hidden">
+
+        <!-- BOTÃO VOLTAR -->
+        <button id="back-btn" class="back-btn">← Voltar</button>
+
+        <!-- Loading -->
+        <div id="loading-state" class="loading hidden">
+          <div class="loading-spinner"></div>
+          <p class="loading-text">Carregando perguntas...</p>
+        </div>
+
+        <!-- Error -->
+        <div id="error-state" class="error-message hidden">
+          <h3>😕 Oops!</h3>
+          <p>Não foi possível carregar as perguntas.</p>
+          <button class="retry-btn" id="retry-btn">Tentar novamente</button>
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz-content" class="hidden">
+
+          <div class="progress-indicator">
+            <span id="progress-text">Pergunta 1 de 10</span>
+          </div>
+
+          <h2 class="question" id="question-text"></h2>
+
+          <div id="feedback-message" class="feedback hidden"></div>
+
+          <div class="options-list" id="options-container"></div>
+
+          <button class="next-btn" id="next-btn" disabled>Next</button>
+        </div>
+
+        <!-- Complete -->
+        <div id="complete-state" class="quiz-complete hidden">
+          <h2>🎉 Quiz Completo!</h2>
+          <div class="score" id="final-score">0/10</div>
+          <p id="score-message"></p>
+          <button class="restart-btn" id="restart-btn">
+            Voltar ao início
+          </button>
+        </div>
+
+      </div>
+      <!-- =============== FIM QUIZ SCREEN =============== -->
+
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>

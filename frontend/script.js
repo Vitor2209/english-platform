@@ -4,61 +4,7 @@
    ===================================================== */
 
 // ============ Configuration ============
-const API_URL = 'http://localhost:3000/quiz';
-
-// Mock data for testing when API is unavailable
-const MOCK_QUESTIONS = [
-    {
-        question: "Choose the correct sentence:",
-        options: [
-            "If I will see him, I tell you",
-            "If I saw him, I tell you",
-            "If I see him, I will tell you",
-            "If I seen him, I will tell you"
-        ],
-        answer: "If I see him, I will tell you"
-    },
-    {
-        question: "What's the correct way to say 'E aí, beleza?'",
-        options: [
-            "What's up, beauty?",
-            "What's up, man?",
-            "How is your beauty?",
-            "What beauty?"
-        ],
-        answer: "What's up, man?"
-    },
-    {
-        question: "Choose the slang for 'muito legal':",
-        options: [
-            "Very legal",
-            "So cool",
-            "Much nice",
-            "Too good"
-        ],
-        answer: "So cool"
-    },
-    {
-        question: "'I'm gonna grab a bite' means:",
-        options: [
-            "Vou dar uma mordida",
-            "Vou comer algo rápido",
-            "Vou pegar algo",
-            "Estou com raiva"
-        ],
-        answer: "Vou comer algo rápido"
-    },
-    {
-        question: "What does 'chill out' mean?",
-        options: [
-            "Ficar com frio",
-            "Relaxar, se acalmar",
-            "Sair para passear",
-            "Fazer exercício"
-        ],
-        answer: "Relaxar, se acalmar"
-    }
-];
+const API_URL = 'http://localhost:3000/modules/1/lessons/1';
 
 // ============ Quiz State ============
 let quizState = {
@@ -86,6 +32,13 @@ const elements = {
     finalScore: document.getElementById('final-score'),
     scoreMessage: document.getElementById('score-message')
 };
+const backBtn = document.getElementById('back-btn');
+
+
+// ============ Home / Navigation ============
+const homeScreen = document.getElementById('home-screen');
+const quizScreen = document.getElementById('quiz-screen');
+
 
 // ============ API Functions ============
 
@@ -95,7 +48,7 @@ const elements = {
  */
 async function fetchQuestions() {
     showState('loading');
-    
+
     try {
         const response = await fetch(API_URL, {
             method: 'GET',
@@ -103,23 +56,25 @@ async function fetchQuestions() {
                 'Content-Type': 'application/json'
             }
         });
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        
-        // Validate data structure
-        if (!Array.isArray(data) || data.length === 0) {
-            throw new Error('Invalid data format');
+
+        // ✅ Validação correta do formato da API
+        if (!data.questions || !Array.isArray(data.questions) || data.questions.length === 0) {
+            throw new Error('Formato inválido da API');
         }
-        
-        return data;
+
+        // ✅ Retornamos SOMENTE o array de perguntas
+        return data.questions;
+
     } catch (error) {
-        console.warn('API unavailable, using mock data:', error.message);
-        // Return mock data when API fails
-        return MOCK_QUESTIONS;
+        console.error('Erro ao buscar perguntas:', error);
+        showState('error');
+        return [];
     }
 }
 
@@ -166,6 +121,18 @@ function resetQuizState() {
     };
 }
 
+// ============ Screen Control ============
+function showHome() {
+    homeScreen.classList.remove('hidden');
+    quizScreen.classList.add('hidden');
+}
+
+function showQuizScreen() {
+    homeScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+}
+
+
 // ============ Quiz Logic ============
 
 /**
@@ -177,13 +144,17 @@ async function initQuiz() {
     const questions = await fetchQuestions();
     
     if (questions && questions.length > 0) {
-        quizState.questions = questions;
+        quizState.questions = pickTenQuestions(questions);
         showState('quiz');
         renderQuestion();
     } else {
         showState('error');
     }
 }
+function pickTenQuestions(allQuestions) {
+    return allQuestions.slice(0, 10);
+}
+
 
 /**
  * Renders the current question and options
@@ -389,7 +360,7 @@ elements.nextBtn.addEventListener('click', nextQuestion);
 elements.retryBtn.addEventListener('click', initQuiz);
 
 // Restart button click (on complete state)
-elements.restartBtn.addEventListener('click', initQuiz);
+elements.restartBtn.addEventListener('click', showHome);
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
@@ -408,4 +379,29 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============ Initialize ============
-document.addEventListener('DOMContentLoaded', initQuiz);
+document.addEventListener('DOMContentLoaded', showHome);
+
+// ============ Home Buttons ============
+document.querySelectorAll('.home-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        showQuizScreen();
+        initQuiz(); // depois filtramos por módulo
+    });
+});
+
+const randomBtn = document.querySelector('.random-quiz');
+if (randomBtn) {
+    randomBtn.addEventListener('click', () => {
+        showQuizScreen();
+        initQuiz();
+    });
+}
+if (backBtn) {
+  backBtn.addEventListener('click', () => {
+    resetQuizState(); // limpa perguntas, score, index
+    showHome();       // volta pra tela inicial
+  });
+}
+
+
+

@@ -1,12 +1,623 @@
-[
-  {
-    "question": "Choose the correct sentence:",
-    "options": [
-      "If I will see him, I tell you",
-      "If I saw him, I tell you",
-      "If I see him, I will tell you",
-      "If I seen him, I will tell you"
-    ],
-    "answer": "If I see him, I will tell you"
-  }
-]
+{
+  "modules": [
+    {
+      "id": 1,
+      "name": "A base que você precisa",
+      "level": "A1",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Introdução ao Inglês das Ruas",
+          "questions": [
+            {
+              "question": "Complete the sentence: I ___ from Brazil.",
+              "options": ["is", "are", "am", "be"],
+              "answer": "am"
+            },
+            {
+              "question": "Choose the correct sentence:",
+              "options": [
+                "She are my friend",
+                "She am my friend",
+                "She is my friend",
+                "She be my friend"
+              ],
+              "answer": "She is my friend"
+            },
+            {
+              "question": "Which word has the /th/ sound?",
+              "options": ["tree", "thank", "right", "read"],
+              "answer": "thank"
+            },
+            {
+              "question": "Which letter comes after C?",
+              "options": ["A", "B", "D", "E"],
+              "answer": "D"
+            },
+            {
+              "question": "How do you say the number 15 in English?",
+              "options": ["Fifteen", "Fifty", "Five-teen", "Fiveteen"],
+              "answer": "Fifteen"
+            },
+            {
+              "question": "How do you say $4.50 in English?",
+              "options": [
+                "Four and fifty dollars",
+                "Four dollars fifty",
+                "Four dollars and fifty cents",
+                "Four dollars with fifty"
+              ],
+              "answer": "Four dollars and fifty cents"
+            },
+            {
+              "question": "How do you say 23/06 in English?",
+              "options": [
+                "June twenty-three",
+                "Twenty-three June",
+                "June twenty-third",
+                "June twenty"
+              ],
+              "answer": "June twenty-third"
+            },
+            {
+              "question": "Complete the sentence: Today is ____.",
+              "options": ["Monday", "January", "First", "One"],
+              "answer": "Monday"
+            },
+            {
+              "question": "How would you answer politely?",
+              "options": [
+                "I want a coffee",
+                "Give me a coffee",
+                "I'd like a coffee, please",
+                "Coffee now"
+              ],
+              "answer": "I'd like a coffee, please"
+            },
+            {
+              "question": "What does \"chill out\" mean?",
+              "options": [
+                "Ficar com frio",
+                "Sair para beber",
+                "Relaxar, se acalmar",
+                "Trabalhar mais"
+              ],
+              "answer": "Relaxar, se acalmar"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Saudações e Despedidas",
+          "questions": [
+            {
+              "question": "Which greeting is more formal?",
+              "options": ["Hey", "Yo", "Good morning", "What's up?"],
+              "answer": "Good morning"
+            },
+            {
+              "question": "Which greeting is informal?",
+              "options": ["Good evening", "Hello", "Hey", "Nice to meet you"],
+              "answer": "Hey"
+            },
+            {
+              "question": "Someone says: \"How are you?\" What is a natural answer?",
+              "options": [
+                "I'm table",
+                "I'm good, thanks",
+                "I good",
+                "Very thank you"
+              ],
+              "answer": "I'm good, thanks"
+            },
+            {
+              "question": "What does \"What's up?\" mean?",
+              "options": [
+                "Onde você está?",
+                "Quanto custa?",
+                "E aí? Tudo certo?",
+                "Qual é o seu nome?"
+              ],
+              "answer": "E aí? Tudo certo?"
+            },
+            {
+              "question": "Which option is a correct response to \"How are you?\"",
+              "options": [
+                "I'm fine",
+                "I'm hello",
+                "I am very",
+                "I how are"
+              ],
+              "answer": "I'm fine"
+            },
+            {
+              "question": "Which one is a formal goodbye?",
+              "options": ["Bye", "See ya", "Goodbye", "Peace"],
+              "answer": "Goodbye"
+            },
+            {
+              "question": "Which goodbye is informal?",
+              "options": [
+                "It was a pleasure",
+                "Take care",
+                "Catch you later",
+                "Good evening"
+              ],
+              "answer": "Catch you later"
+            },
+            {
+              "question": "What does \"Take care\" mean?",
+              "options": [
+                "Tome cuidado / se cuida",
+                "Pegue isso",
+                "Volte logo",
+                "Até amanhã"
+              ],
+              "answer": "Tome cuidado / se cuida"
+            },
+            {
+              "question": "What does \"See ya\" mean?",
+              "options": [
+                "Te vejo depois",
+                "Boa noite",
+                "Prazer em te conhecer",
+                "Como vai?"
+              ],
+              "answer": "Te vejo depois"
+            },
+            {
+              "question": "You are leaving a café. What is the most natural sentence?",
+              "options": [
+                "Goodbye, it was a pleasure",
+                "I go now",
+                "Bye bye coffee",
+                "I exit now"
+              ],
+              "answer": "Goodbye, it was a pleasure"
+            }
+          ]
+        }
+        ,
+        {
+          "lesson": 3,
+          "title": "Pronomes Pessoais",
+          "questions": [
+            {
+              "question": "Which pronoun means \"Eu\"?",
+              "options": ["You", "I", "He", "We"],
+              "answer": "I"
+            },
+            {
+              "question": "Which pronoun do you use for \"Ela\"?",
+              "options": ["He", "She", "It", "They"],
+              "answer": "She"
+            },
+            {
+              "question": "Choose the correct sentence:",
+              "options": [
+                "I is happy",
+                "I are happy",
+                "I am happy",
+                "I be happy"
+              ],
+              "answer": "I am happy"
+            },
+            {
+              "question": "Complete the sentence: ___ are at home.",
+              "options": ["He", "She", "They", "It"],
+              "answer": "They"
+            },
+            {
+              "question": "Which sentence is correct?",
+              "options": [
+                "She are tired",
+                "She am tired",
+                "She is tired",
+                "She be tired"
+              ],
+              "answer": "She is tired"
+            },
+            {
+              "question": "Which pronoun is used for objects, animals or weather?",
+              "options": ["He", "She", "It", "They"],
+              "answer": "It"
+            },
+            {
+              "question": "Complete the sentence: ___ is raining today.",
+              "options": ["He", "She", "It", "They"],
+              "answer": "It"
+            },
+            {
+              "question": "Which pronoun means \"Nós\"?",
+              "options": ["They", "You", "We", "I"],
+              "answer": "We"
+            },
+            {
+              "question": "Choose the correct option: ___ live in London.",
+              "options": ["He", "She", "We", "It"],
+              "answer": "We"
+            },
+            {
+              "question": "Complete the sentence: ___ is my dog.",
+              "options": ["He", "She", "It", "They"],
+              "answer": "It"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Adjetivos Possessivos",
+          "questions": [
+            {
+              "question": "Which possessive adjective means \"meu / minha\"?",
+              "options": ["My", "Your", "His", "Her"],
+              "answer": "My"
+            },
+            {
+              "question": "Complete the sentence: This is ___ pizza.",
+              "options": ["my", "your", "his", "their"],
+              "answer": "my"
+            },
+            {
+              "question": "Which possessive adjective do you use for \"dele\"?",
+              "options": ["Her", "His", "Its", "Our"],
+              "answer": "His"
+            },
+            {
+              "question": "Complete the sentence: ___ phone is on the table.",
+              "options": ["His", "Her", "My", "Their"],
+              "answer": "Her"
+            },
+            {
+              "question": "Which possessive adjective is used for objects or animals?",
+              "options": ["His", "Her", "Its", "Their"],
+              "answer": "Its"
+            },
+            {
+              "question": "Complete the sentence: The cat is licking ___ paw.",
+              "options": ["his", "her", "its", "their"],
+              "answer": "its"
+            },
+            {
+              "question": "Which possessive adjective means \"nosso / nossa\"?",
+              "options": ["Our", "Their", "Your", "My"],
+              "answer": "Our"
+            },
+            {
+              "question": "Complete the sentence: We need to find ___ seats.",
+              "options": ["my", "our", "their", "his"],
+              "answer": "our"
+            },
+            {
+              "question": "Which possessive adjective means \"deles / delas\"?",
+              "options": ["Their", "Our", "Your", "Its"],
+              "answer": "Their"
+            },
+            {
+              "question": "Complete the sentence: Is this ___ drink?",
+              "options": ["my", "his", "your", "their"],
+              "answer": "your"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Construindo Frases Simples",
+      "level": "A1",
+      "lessons": [
+        {
+          "lesson": 2,
+          "title": "Estrutura Básica de Frases",
+          "questions": [
+            {
+              "question": "Choose the correct sentence:",
+              "options": [
+                "I like pizza",
+                "I pizza like",
+                "Like I pizza",
+                "Pizza I like"
+              ],
+              "answer": "I like pizza"
+            },
+            {
+              "question": "Which sentence follows the correct order (Subject + Verb + Object)?",
+              "options": [
+                "She coffee drinks",
+                "Drinks she coffee",
+                "She drinks coffee",
+                "Coffee drinks she"
+              ],
+              "answer": "She drinks coffee"
+            },
+            {
+              "question": "Complete the sentence: They ___ football.",
+              "options": ["plays", "play", "playing", "played"],
+              "answer": "play"
+            },
+            {
+              "question": "Choose the correct sentence:",
+              "options": [
+                "He go to work",
+                "He goes to work",
+                "He going to work",
+                "He gone to work"
+              ],
+              "answer": "He goes to work"
+            },
+            {
+              "question": "Choose the correct negative sentence:",
+              "options": [
+                "I no like coffee",
+                "I don't like coffee",
+                "I not like coffee",
+                "I doesn't like coffee"
+              ],
+              "answer": "I don't like coffee"
+            },
+            {
+              "question": "Choose the correct question:",
+              "options": [
+                "You like pizza?",
+                "Do you like pizza?",
+                "Like you pizza?",
+                "You do like pizza?"
+              ],
+              "answer": "Do you like pizza?"
+            },
+            {
+              "question": "Which sentence sounds more natural?",
+              "options": [
+                "I am hungry",
+                "I hungry am",
+                "Hungry I am",
+                "I am hunger"
+              ],
+              "answer": "I am hungry"
+            },
+            {
+              "question": "Choose the correct sentence:",
+              "options": [
+                "We every day study English",
+                "We study English every day",
+                "Every day we English study",
+                "Study we English every day"
+              ],
+              "answer": "We study English every day"
+            },
+            {
+              "question": "What does \"I’m down\" usually mean?",
+              "options": [
+                "Estou triste",
+                "Estou cansado",
+                "Topo / concordo",
+                "Estou doente"
+              ],
+              "answer": "Topo / concordo"
+            },
+            {
+              "question": "What is the most natural sentence?",
+              "options": [
+                "Let’s go eat",
+                "Let’s eat go",
+                "Go let’s eat",
+                "Eat let’s go"
+              ],
+              "answer": "Let’s go eat"
+            }
+          ]
+        }
+                ,
+        {
+          "lesson": 3,
+          "title": "Perguntas com o Verbo To Be",
+          "questions": [
+            {
+              "question": "Choose the correct question:",
+              "options": [
+                "You are happy?",
+                "Are you happy?",
+                "Do you are happy?",
+                "Are happy you?"
+              ],
+              "answer": "Are you happy?"
+            },
+            {
+              "question": "Choose the correct question:",
+              "options": [
+                "Is she tired?",
+                "She is tired?",
+                "Does she tired?",
+                "Are she tired?"
+              ],
+              "answer": "Is she tired?"
+            },
+            {
+              "question": "Choose the correct question:",
+              "options": [
+                "They are students?",
+                "Are they students?",
+                "Do they are students?",
+                "Is they students?"
+              ],
+              "answer": "Are they students?"
+            },
+            {
+              "question": "Transform into a question: You are a student.",
+              "options": [
+                "Are you a student?",
+                "Do you are a student?",
+                "You are a student?",
+                "Is you a student?"
+              ],
+              "answer": "Are you a student?"
+            },
+            {
+              "question": "Transform into a question: She is at home.",
+              "options": [
+                "Is she at home?",
+                "Does she at home?",
+                "She is at home?",
+                "Are she at home?"
+              ],
+              "answer": "Is she at home?"
+            },
+            {
+              "question": "What is the correct short answer to: Are you tired?",
+              "options": [
+                "Yes, I tired",
+                "Yes, I am",
+                "Yes, I do",
+                "Yes, am I"
+              ],
+              "answer": "Yes, I am"
+            },
+            {
+              "question": "What is the correct short answer to: Is she hungry?",
+              "options": [
+                "Yes, she hungry",
+                "Yes, she is",
+                "Yes, is she",
+                "Yes, she do"
+              ],
+              "answer": "Yes, she is"
+            },
+            {
+              "question": "Choose the correct question:",
+              "options": [
+                "Are you at the market?",
+                "Do you at the market?",
+                "You are at the market?",
+                "Is you at the market?"
+              ],
+              "answer": "Are you at the market?"
+            },
+            {
+              "question": "You are in a café. What is the correct question?",
+              "options": [
+                "Is this your coffee?",
+                "This is your coffee?",
+                "Does this your coffee?",
+                "Are this your coffee?"
+              ],
+              "answer": "Is this your coffee?"
+            },
+            {
+              "question": "What is the correct question to start a conversation in a hostel?",
+              "options": [
+                "Are you a tourist?",
+                "Do you a tourist?",
+                "You are tourist?",
+                "Is you tourist?"
+              ],
+              "answer": "Are you a tourist?"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Wh-Questions",
+          "questions": [
+            {
+              "question": "Choose the correct question for asking a name:",
+              "options": [
+                "Where is your name?",
+                "What is your name?",
+                "How your name?",
+                "Which is your name?"
+              ],
+              "answer": "What is your name?"
+            },
+            {
+              "question": "Choose the correct question: (Onde você é?)",
+              "options": [
+                "When are you from?",
+                "What are you from?",
+                "Where are you from?",
+                "Who are you from?"
+              ],
+              "answer": "Where are you from?"
+            },
+            {
+              "question": "Choose the correct question: (Quando é a festa?)",
+              "options": [
+                "When is the party?",
+                "Where is the party?",
+                "Why is the party?",
+                "How is the party?"
+              ],
+              "answer": "When is the party?"
+            },
+            {
+              "question": "Which question asks for a reason?",
+              "options": ["What", "When", "Why", "Where"],
+              "answer": "Why"
+            },
+            {
+              "question": "Choose the correct question: (Quem é ele?)",
+              "options": [
+                "What is he?",
+                "Who is he?",
+                "Which is he?",
+                "How is he?"
+              ],
+              "answer": "Who is he?"
+            },
+            {
+              "question": "Choose the correct question to ask about options:",
+              "options": [
+                "What coffee do you want?",
+                "Which coffee do you want?",
+                "Whose coffee do you want?",
+                "How coffee do you want?"
+              ],
+              "answer": "Which coffee do you want?"
+            },
+            {
+              "question": "Choose the correct question to ask ownership:",
+              "options": [
+                "Which bag is this?",
+                "Who bag is this?",
+                "Whose bag is this?",
+                "What bag is this?"
+              ],
+              "answer": "Whose bag is this?"
+            },
+            {
+              "question": "Choose the correct structure:",
+              "options": [
+                "Where you are from?",
+                "Where are you from?",
+                "Where from you are?",
+                "You are from where?"
+              ],
+              "answer": "Where are you from?"
+            },
+            {
+              "question": "You are in a shop. What is the best question?",
+              "options": [
+                "Which color do you like?",
+                "What color you like?",
+                "How color you like?",
+                "Whose color you like?"
+              ],
+              "answer": "Which color do you like?"
+            },
+            {
+              "question": "You see keys on the table. What do you ask?",
+              "options": [
+                "Which keys are these?",
+                "Whose keys are these?",
+                "What keys are these?",
+                "Who keys are these?"
+              ],
+              "answer": "Whose keys are these?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
