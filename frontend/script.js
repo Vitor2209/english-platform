@@ -4,7 +4,7 @@
    ===================================================== */
 
 // ============ Configuration ============
-const API_URL = 'http://localhost:3000/modules/1/lessons/1';
+const API_URL = 'https://ingles-das-ruas.onrender.com/modules/1/lessons/1';
 
 // ============ Quiz State ============
 let quizState = {

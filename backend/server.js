@@ -2,15 +2,39 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+// Render usa PORT dinâmica
+const PORT = process.env.PORT || 3000;
 
+// Caminhos
+const frontendPath = path.join(__dirname, '../frontend');
+const dataPath = path.join(__dirname, 'questions.json');
+
+// ======================
+// Utils
+// ======================
 const getData = () => {
-  const filePath = path.join(__dirname, 'questions.json');
-  const raw = fs.readFileSync(filePath, 'utf-8');
+  const raw = fs.readFileSync(dataPath, 'utf-8');
   return JSON.parse(raw);
 };
 
+const getContentType = (ext) => {
+  const types = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.js': 'application/javascript',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.svg': 'image/svg+xml'
+  };
+  return types[ext] || 'text/plain';
+};
+
+// ======================
+// Server
+// ======================
 const server = http.createServer((req, res) => {
+  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -22,6 +46,31 @@ const server = http.createServer((req, res) => {
 
   const urlParts = req.url.split('/').filter(Boolean);
 
+  // ======================
+  // FRONTEND
+  // ======================
+
+  // Home → index.html
+  if (req.method === 'GET' && req.url === '/') {
+    const filePath = path.join(frontendPath, 'index.html');
+    const content = fs.readFileSync(filePath);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    return res.end(content);
+  }
+
+  // Arquivos estáticos (css, js, imagens)
+  const filePath = path.join(frontendPath, req.url);
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    const ext = path.extname(filePath);
+    const contentType = getContentType(ext);
+    const content = fs.readFileSync(filePath);
+    res.writeHead(200, { 'Content-Type': contentType });
+    return res.end(content);
+  }
+
+  // ======================
+  // API
+  // ======================
   try {
     const data = getData();
 
@@ -76,16 +125,19 @@ const server = http.createServer((req, res) => {
       return res.end(JSON.stringify(lesson));
     }
 
+    // Fallback
     res.writeHead(404);
     res.end(JSON.stringify({ error: 'Route not found' }));
 
   } catch (err) {
+    console.error(err);
     res.writeHead(500);
     res.end(JSON.stringify({ error: 'Server error' }));
   }
 });
 
+// ======================
 server.listen(PORT, () => {
-  console.log(`API rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
 
