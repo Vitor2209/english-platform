@@ -1,0 +1,587 @@
+/* =====================================================
+   Inglês das Ruas - Quiz Styles
+   Visual: Green street-style theme, modern and clean
+   ===================================================== */
+
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Main Colors */
+    --green-primary: #2E8B3C;
+    --green-dark: #1E6B2C;
+    --green-light: #4CAF50;
+    --green-correct: #4CAF50;
+    --red-incorrect: #E53935;
+    --yellow-button: #FFD93D;
+    --yellow-hover: #FFC107;
+    --white: #FFFFFF;
+    --gray-light: #F5F5F5;
+    --gray-border: #E0E0E0;
+    --text-dark: #2D2D2D;
+    --text-muted: #666666;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    
+    /* Shadows */
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-button: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   BACKGROUND PRINCIPAL
+   ========================= */
+body {
+    background:
+        linear-gradient(
+            rgba(46, 139, 60, 0.92),
+            rgba(30, 107, 44, 0.92)
+        );
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 🔥 ADIÇÃO: IMAGEM DE LONDRES */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("image/london.jpg") center bottom / cover no-repeat;
+    opacity: 0.18;               /* controla intensidade da cidade */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Mantém o quiz acima do fundo */
+.logo-wrapper {                
+  background: #5fbf5f;          /* verde */
+  display: flex;
+  justify-content: center;
+  background: none;
+  padding: 0;
+}
+.html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.logo {
+  width: 100%;                 /* força viewport */
+  max-width: 900px;              /* REMOVE limite */
+  height: auto;
+  display: contain;
+}
+/* =========================
+   TODO O RESTO DO SEU CSS
+   (INALTERADO)
+   ========================= */
+
+/* Quiz Card */
+.quiz-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
+}
+
+/* ... TODO O SEU CSS SEGUE IGUAL ... */
+
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--green-primary);
+    color: var(--text-dark);
+}
+
+/* Background with city silhouette effect */
+body {
+    background: 
+        linear-gradient(180deg, var(--green-primary) 0%, var(--green-dark) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* City silhouette decorative background */
+body::before {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: 
+        linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Main Quiz Container */
+.quiz-container {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Quiz Card */
+.quiz-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card Header - Green section with logo */
+.card-header {
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--green-primary) 100%);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    position: relative;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    text-shadow: 2px 2px 0 var(--white);
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.logo-text .highlight {
+    color: var(--green-dark);
+    display: block;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    transform: rotate(-5deg);
+}
+
+.logo-icon.right {
+    transform: rotate(5deg);
+}
+
+/* Card Body */
+.card-body {
+    padding: var(--spacing-xl);
+}
+
+/* Question */
+.question {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Progress indicator */
+.progress-indicator {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Options List */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Option Button */
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--gray-light);
+    border: 2px solid var(--gray-border);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.option-btn:hover:not(:disabled):not(.correct):not(.incorrect) {
+    border-color: var(--green-primary);
+    background: var(--white);
+    transform: translateX(5px);
+}
+
+.option-btn:focus {
+    outline: none;
+    border-color: var(--green-primary);
+}
+
+/* Radio circle indicator */
+.option-radio {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border: 2px solid var(--gray-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    background: var(--white);
+}
+
+.option-radio svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Selected state */
+.option-btn.selected {
+    border-color: var(--green-primary);
+    background: var(--white);
+}
+
+.option-btn.selected .option-radio {
+    border-color: var(--green-primary);
+    background: var(--green-primary);
+}
+
+.option-btn.selected .option-radio svg {
+    opacity: 1;
+    color: var(--white);
+}
+
+/* Correct answer state */
+.option-btn.correct {
+    border-color: var(--green-correct);
+    background: var(--green-correct);
+    color: var(--white);
+}
+
+.option-btn.correct .option-radio {
+    border-color: var(--white);
+    background: var(--white);
+}
+
+.option-btn.correct .option-radio svg {
+    opacity: 1;
+    color: var(--green-correct);
+}
+
+/* Incorrect answer state */
+.option-btn.incorrect {
+    border-color: var(--red-incorrect);
+    background: rgba(229, 57, 53, 0.1);
+    color: var(--red-incorrect);
+}
+
+.option-btn.incorrect .option-radio {
+    border-color: var(--red-incorrect);
+    background: var(--red-incorrect);
+}
+
+.option-btn.incorrect .option-radio svg {
+    opacity: 1;
+    color: var(--white);
+}
+
+/* Disabled state for other options after answer */
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Option text */
+.option-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* Next Button */
+.next-btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--yellow-button);
+    border: none;
+    border-radius: var(--radius-xl);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-button);
+}
+
+.next-btn:hover:not(:disabled) {
+    background: var(--yellow-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.next-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.next-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--gray-border);
+    border-top-color: var(--green-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto var(--spacing-md);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Error State */
+.error-message {
+    text-align: center;
+    padding: var(--spacing-xl);
+    color: var(--red-incorrect);
+}
+
+.error-message h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.retry-btn {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--green-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.retry-btn:hover {
+    background: var(--green-dark);
+}
+
+/* Quiz Complete State */
+.quiz-complete {
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.quiz-complete h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-dark);
+}
+
+.quiz-complete .score {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--green-primary);
+    margin: var(--spacing-md) 0;
+}
+
+.quiz-complete p {
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.restart-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--green-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-xl);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restart-btn:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+/* Feedback message */
+.feedback {
+    text-align: center;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback.correct {
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--green-correct);
+}
+
+.feedback.incorrect {
+    background: rgba(229, 57, 53, 0.1);
+    color: var(--red-incorrect);
+}
+
+/* Hidden state */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .quiz-container {
+        max-width: 480px;
+    }
+    
+    .card-body {
+        padding: var(--spacing-xl) calc(var(--spacing-xl) * 1.5);
+    }
+    
+    .question {
+        font-size: 1.4rem;
+    }
+    
+    .logo-text {
+        font-size: 2.2rem;
+    }
+    
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+    .quiz-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .quiz-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    }
+}
+/* =====================================================
+   Inglês das Ruas - Quiz Styles
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-primary: #2E8B3C;
+    --green-dark: #1E6B2C;
+    --green-light: #4CAF50;
+    --green-correct: #4CAF50;
+    --red-incorrect: #E53935;
+    --yellow-button: #FFD93D;
+    --yellow-hover: #FFC107;
+    --white: #FFFFFF;
+    --gray-light: #F5F5F5;
+    --gray-border: #E0E0E0;
+    --text-dark: #2D2D2D;
+    --text-muted: #666666;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--green-primary);
+    color: var(--text-dark);
+}
+
